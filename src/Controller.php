@@ -5,9 +5,9 @@ namespace Tnapf\MysqlSessions;
 use CommandString\Utils\GeneratorUtils;
 use PDO;
 use stdClass;
-use Tnapf\Sessions\Exceptions\SessionDoesNotExist;
-use Tnapf\SessionsInterfaces\Controller as ControllerInterface;
-use Tnapf\SessionsInterfaces\Session as SessionInterface;
+use Tnapf\SessionInterfaces\Exceptions\SessionDoesNotExist;
+use Tnapf\SessionInterfaces\Controller as ControllerInterface;
+use Tnapf\SessionInterfaces\Session as SessionInterface;
 
 class Controller implements ControllerInterface {
     /**

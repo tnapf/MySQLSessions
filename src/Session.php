@@ -5,7 +5,7 @@ namespace Tnapf\MysqlSessions;
 
 use DateTime;
 use stdClass;
-use Tnapf\SessionsInterfaces\Session as SessionInterface;
+use Tnapf\SessionInterfaces\Session as SessionInterface;
 
 class Session extends SessionInterface {
     private stdClass $data;
