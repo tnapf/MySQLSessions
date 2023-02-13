@@ -1,0 +1,23 @@
+{
+    "name": "tnapf/mysqlsessions",
+    "description": "A sessioninterface implementation for storing sessions in a mysql database",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Tnapf\\MysqlSessions\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Michael Snedeker",
+            "email": "rsnedeker20@gmail.com"
+        }
+    ],
+    "require": {
+        "tnapf/sessioninterfaces": "^0.1.0",
+        "tnapf/pdo": "^1.0",
+        "commandstring/utils": "^1.4",
+        "tnapf/router": "^1.1"
+    }
+}
