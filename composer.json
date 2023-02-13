@@ -16,8 +16,6 @@
     ],
     "require": {
         "tnapf/sessioninterfaces": "^0.1.0",
-        "tnapf/pdo": "^1.0",
-        "commandstring/utils": "^1.4",
-        "tnapf/router": "^1.1"
+        "commandstring/utils": "^1.4"
     }
 }
