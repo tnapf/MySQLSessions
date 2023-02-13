@@ -15,7 +15,7 @@
         }
     ],
     "require": {
-        "tnapf/sessioninterfaces": "^0.1.0",
+        "tnapf/sessioninterfaces": "^1.1.0",
         "commandstring/utils": "^1.4"
     }
 }
