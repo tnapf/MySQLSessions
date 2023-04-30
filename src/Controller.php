@@ -15,7 +15,7 @@ class Controller implements ControllerInterface {
      */
     private stdClass $sessions;
 
-    public function __construct(private PDO $driver) {
+    public function __construct(private readonly PDO $driver) {
         $this->sessions = new stdClass;
 
         $this->sessions->existing = $this->sessions->new = [];
