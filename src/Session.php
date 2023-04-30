@@ -52,7 +52,7 @@ class Session extends SessionInterface {
     {
         foreach ([$name, ...$names] as $name) {
             unset($this->data->$name);
-        } 
+        }
 
         return $this;
     }
@@ -76,7 +76,8 @@ class Session extends SessionInterface {
         $this->unset($name);
     }
 
-    public function __toString() {
+    public function __toString(): string
+    {
         return json_encode($this->data);
     }
 }
