@@ -29,9 +29,9 @@ class Controller implements ControllerInterface {
     {
         while (!isset($id)) {
             $id = GeneratorUtils::uuid();
-            
+
             $stmt = $this->driver->prepare("SELECT id FROM sessions WHERE id = :id");
-            $stmt->execute(["id" => $id]);
+            $stmt->execute(compact('id'));
 
             if ($stmt->rowCount()) {
                 unset($id);
@@ -48,7 +48,7 @@ class Controller implements ControllerInterface {
     }
 
     public function get(string $id): Session
-    {        
+    {
         $id = self::filterId($id);
 
         if (isset($this->sessions->existing[$id]) || isset($this->sessions->new[$id])) {
@@ -56,7 +56,7 @@ class Controller implements ControllerInterface {
         }
 
         $stmt = $this->driver->prepare("SELECT * FROM sessions WHERE id = :id");
-        $stmt->execute(["id" => $id]);
+        $stmt->execute(compact('id'));
 
         if (!$stmt->rowCount()) {
             throw new SessionDoesNotExist($id);
@@ -85,7 +85,7 @@ class Controller implements ControllerInterface {
         $stmt = $this->driver->prepare("DELETE FROM sessions WHERE id = :id");
         $stmt->execute(["id" => $session]);
     }
-    
+
     public function __destruct() {
         foreach ($this->sessions->new as $session) {
             $stmt = $this->driver->prepare("INSERT INTO sessions (id, data, expires) VALUES (:id, :data, :expires)");
