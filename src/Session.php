@@ -50,8 +50,8 @@ class Session extends SessionInterface {
 
     public function unset(string $name, string ...$names): self
     {
-        foreach ([$name, ...$names] as $name) {
-            unset($this->data->$name);
+        foreach ([$name, ...$names] as $_name) {
+            unset($this->data->$_name);
         }
 
         return $this;
